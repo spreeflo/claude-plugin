@@ -9,14 +9,14 @@ The CRM is available in workspaces whose plan includes it. If `get_work_queue` i
 
 ## Steps
 
-1. **What needs attention.** `get_work_queue`. It defaults to the user; pass `memberId` for a colleague, or `all` for everyone (admins only). Summarise it in the order it comes: missed speed-to-lead deadlines, hot leads nobody has touched, stale deals, then tasks overdue, due today and upcoming.
+1. **What needs attention.** `get_work_queue`. It defaults to the user; give it a `memberId` for a colleague, or `all` for everyone (admins only). Summarise it in the order it comes: missed speed-to-lead deadlines, hot leads nobody has touched, stale deals, then tasks overdue, due today and upcoming.
 2. **Context on a contact or deal.**
    - `get_contact` for the person: stage, owner, company, open tasks and deals.
    - `get_activity_timeline` for what has happened (`filter` narrows it to conversations, marketing, web or deals).
    - `list_deals` and `get_deal` for deals.
 3. **Act on what the user asks:**
    - **Log something:** `create_note` on the contact, company or deal. A repeated call adds a second note, so do not retry one that succeeded.
-   - **Plan a follow-up:** `create_task` with a name the owner will understand, a `type` (call, email, todo or follow_up), a `dueAt` and an `ownerId` from `list_team_members`. Pass an `idempotencyKey`, so a retry does not create a second task.
+   - **Plan a follow-up:** `create_task` with a name the owner will understand, a `type` (call, email, todo or follow_up), a `dueAt` and an `ownerId` from `list_team_members`. Include an `idempotencyKey`, so a retry does not create a second task.
    - **Close a task:** `update_task` with status `DONE` (or `SKIPPED`). Completing a task can start a journey that is waiting on it; mention this when it applies.
    - **Stage or owner:** `update_contact` with `lifecycleStage` or `ownerId`. Say what will change first: active journeys that trigger on the change can then email the contact.
    - **Write to a contact:** `create_inbox_draft` with a subject and body. Tell the user the draft is waiting in the member's Spreeflo inbox to review and send. Never say it was sent.
