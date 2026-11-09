@@ -1,0 +1,24 @@
+{
+  "name": "spreeflo",
+  "displayName": "Spreeflo",
+  "version": "1.0.0",
+  "description": "Work with your Spreeflo email marketing workspace: contacts and CRM, segments, campaigns, journeys, forms and analytics.",
+  "author": {
+    "name": "Spreeflo",
+    "url": "https://spreeflo.com"
+  },
+  "homepage": "https://spreeflo.com",
+  "repository": "https://github.com/Spreeflo/claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "email marketing",
+    "marketing automation",
+    "newsletters",
+    "crm"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://spreeflo.com/help/mcp-connecting",
+  "supportUrl": "https://spreeflo.com/contact-us",
+  "privacyPolicyUrl": "https://spreeflo.com/legal/privacy",
+  "termsOfServiceUrl": "https://spreeflo.com/legal/terms-of-service"
+}
